@@ -1,0 +1,19 @@
+<article class="content">
+  <header class="header">Angular TodoList</header>
+  <nav class="nav">
+    <input class="search" [(ngModel)]="search" placeholder="add todo" />
+    <button class="add" (click)="add()">添加</button>
+  </nav>
+  <footer class="footer">
+    <li
+      class="section"
+      *ngFor="let item of list; let i = index; trackBy: identify"
+    >
+      <label class="label">
+        <input type="checkbox" />
+        <span>{{ item.name }}</span>
+      </label>
+      <button class="delete" (click)="delete(i)">删除</button>
+    </li>
+  </footer>
+</article>
